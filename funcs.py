@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from bs4 import BeautifulSoup
+import urllib.request  # resource downloading
 
 # Every function must have at least one parameter: the logged session
 # 
@@ -42,3 +43,8 @@ def bookRenew(session):
     
 #def anyOtherFunction(session):
     #your code
+
+def getPublicResource(source, filename):
+    print("Obtaining: "+filename+"...")
+    urllib.request.urlretrieve(str(source), str(filename))
+    print("Done.")
